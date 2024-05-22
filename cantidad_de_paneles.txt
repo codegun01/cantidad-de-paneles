@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class CalculadoraPanelsRuuf {
+    //Metodo para calcular cantidad maxima de paneles dentro de un area
+    public static int dimension(int panelLargo, int panelAncho, int areaAncho, int areaLargo) {
+        //Valido dimensiones, ancho y largo
+        if (areaAncho < panelLargo || areaAncho <= 0 || areaLargo <= 0 || panelLargo <= 0 || panelAncho <= 0) {
+            return 0;
+        } else {
+            //Calcular los metros cuadrados del area
+            int metrosCuadrados = areaAncho * areaLargo;
+            // calcualr los metros cuadrados de los paneles
+            int dimensionPanel = panelLargo * panelAncho;
+            //calcular cantidad maxima de paneles
+            int cantidadPaneles = metrosCuadrados / dimensionPanel;
+            return cantidadPaneles;
+        }
+    }
+        
+        
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        
+        
+        System.out.println("Cantidad de paneles: " + dimension(1,2, 2, 4));
+        System.out.println("Cantidad de paneles: " + dimension(1,2, 3, 5));
+        System.out.println("Cantidad de paneles: " + dimension(2,2, 1, 10));
+        
+        
+        
+    }
+}
